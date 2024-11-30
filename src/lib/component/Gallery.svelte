@@ -1,0 +1,172 @@
+
+
+
+
+<div class="gallery-container">
+
+<style>
+    .gallery-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .masonry-grid {
+        columns: 5 250px;
+        column-gap: 16px;
+    }
+
+    .pin {
+        break-inside: avoid;
+        background: #fff;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        transition: transform 0.2s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pin:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .pin img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px 12px 0 0;
+    }
+
+    /* Wide pin styles */
+    .pin.wide {
+        column-span: all;
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .pin.wide img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .pin.wide .pin-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        padding: 20px;
+    }
+
+    .pin.wide .pin-title {
+        color: white;
+        font-size: 24px;
+    }
+
+    .pin.wide .pin-description {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Landscape pin styles */
+    .pin.landscape {
+        column-span: 2;
+    }
+
+    .pin.landscape img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .pin-content {
+        padding: 12px;
+    }
+
+    .pin-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 8px 0;
+        color: #333;
+    }
+
+    .pin-description {
+        font-size: 14px;
+        color: #666;
+        margin: 0;
+    }
+
+    /* Tag styles */
+    .pin-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    @media (max-width: 1200px) {
+        .pin.landscape {
+            column-span: all;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .masonry-grid {
+            columns: 2 250px;
+        }
+        
+        .pin.wide img {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .masonry-grid {
+            columns: 1 250px;
+        }
+        
+        .pin.wide img {
+            height: 200px;
+        }
+    }
+</style>
+
+<div class="gallery-container">
+    <div class="masonry-grid">
+        <!-- Extra Wide Pin -->
+        <div class="pin wide">
+            <span class="pin-tag">Featured</span>
+            <img src="/api/placeholder/1200/400" alt="Wide landscape">
+            <div class="pin-content">
+                <h3 class="pin-title">Panoramic Mountain Range</h3>
+                <p class="pin-description">A breathtaking view of the entire mountain range at sunset</p>
+            </div>
+        </div>
+
+        <!-- Regular Pin -->
+        <div class="pin">
+            <img src="/api/placeholder/300/400" alt="">
+            <div class="pin-content">
+                <h3 class="pin-title">Forest Path</h3>
+                <p class="pin-description">Morning mist in the woods</p>
+            </div>
+        </div>
+
+        <!-- Landscape Pin -->
+        <div class="pin landscape">
+            <img src="/api/placeholder/600/300" alt="">
+            <div class="pin-content">
+                <h3 class="pin-title">Coastal Sunset</h3>
+                <p class="pin-description">Golden hour at the beach</p>
+            </div>
+        </div>
+    </div>
+</div>
+   
+</div>
