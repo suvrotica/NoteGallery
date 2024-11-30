@@ -10,7 +10,7 @@ const config = {
 
     kit: {
         adapter: vercel({
-            runtime: 'nodejs20.16'
+            runtime: 'nodejs20.x'
         })
     },
       
